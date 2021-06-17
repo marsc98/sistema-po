@@ -5,8 +5,11 @@ import { Input } from '../../components/Input';
 import { UserPhoto } from '../../components/UserPhoto';
 import { Main, LoginBox, ButtonArea } from './Login';
 import { Button } from '../../components/Button';
+import { Label } from '../../components/Label';
+import { useHistory } from 'react-router-dom';
 
 export function Login(){
+    const history = useHistory();
     return(
         <Main>
             <div className="Main">
@@ -18,15 +21,15 @@ export function Login(){
                 </Title>
                 <LoginBox>
                     <div>
-                        <label>
+                        <Label>
                             E-mail
-                        </label>
+                        </Label>
                         <Input/>
                     </div>
                     <div>
-                        <label>
+                        <Label>
                             Senha
-                        </label>
+                        </Label>
                     </div>
                     <Input/>
                 </LoginBox>
@@ -45,7 +48,7 @@ export function Login(){
                     </Text>
                 </div>
                 <ButtonArea>
-                    <Button>
+                    <Button onClick={e => history.push("/register")}>
                         Cadastrar
                     </Button>
                 </ButtonArea>

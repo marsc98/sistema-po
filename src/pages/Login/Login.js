@@ -38,6 +38,10 @@ export const Main = styled.div`
     }
 
     .Main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         @media(min-width: 768px){
             width: 72%;
             display: flex;
@@ -70,20 +74,6 @@ export const LoginBox = styled.div`
         justify-content: center;
         width: 100%;
         height: 3vh;
-
-        label{
-            color: #4C7183;
-            font-size: 4vw;
-            font-weight: 500;
-            /* margin-bottom: -20px; */
-            bottom: 0;
-            @media(min-width: 768px){
-                font-size :  3vw;
-            }
-            @media(min-width: 1080px){
-                font-size :  1.5vw;
-            }
-        }
     }
 `;
 
