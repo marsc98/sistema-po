@@ -4,7 +4,7 @@ export const Input = styled.input`
     
     color : #4C7183;
 
-    font-size:  2vw;
+    font-size:  4vw;
     font-style: normal;
     font-weight: 600;
     
@@ -22,5 +22,9 @@ export const Input = styled.input`
 
     margin-bottom: 7vh;
     border-bottom: 1px solid #000;
+
+    @media(min-width: 768px) {
+        font-size: 2vw;
+    }
 
 `

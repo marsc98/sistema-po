@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const Text = styled.h1 `
-    color :   ${props => props.terms ? '#000' : '#4C7183'};
+    color :   ${props => props.terms ? '#000' : props.white ? '#fff' : '#4C7183'};
     font-size :  3.8vw;
     font-family:'Roboto';
     font-style: normal;
-    font-weight: 300;
+    font-weight: ${props => props.white ? '500' : '300'};
     line-height: 5vw;
     letter-spacing: 0em;
     text-align: center;

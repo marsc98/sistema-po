@@ -6,11 +6,14 @@ import { Main } from './styles';
 import { useAuthContext } from '../../data/hooks/useAuthContext';
 import { Card } from '../../components/Card';
 import { Text } from '../../components/Text';
+import { Button } from '../../components/Button';
 
 export function Home() {
   const auth = useAuth();
   const history = useHistory();
   const authContext = useAuthContext();
+
+  !authContext.authenticated && history.push('/');
 
   async function handleLogout() {
     await auth.logout();
@@ -18,8 +21,15 @@ export function Home() {
   }
   return(
     <Main>
+      <div className="desconnect">
+        <div>
+          <Button onClick={handleLogout} grey>
+            <Text textBold white>Desconectar</Text>
+          </Button>
+        </div>
+      </div>
       <Title subTitle titleBold>
-        Olá, {authContext.user.displayName || ''}
+        Olá, {authContext.user.displayName || '...'}
       </Title>
 
       <main>
