@@ -7,11 +7,14 @@ import { useAuthContext } from '../../data/hooks/useAuthContext';
 import { Card } from '../../components/Card';
 import { Text } from '../../components/Text';
 import { Button } from '../../components/Button';
+import { usePatientContext } from '../../data/hooks/usePatientContext';
 
 export function Home() {
   const auth = useAuth();
   const history = useHistory();
   const authContext = useAuthContext();
+  const patient = usePatientContext();
+  console.log(patient && patient)
 
   !authContext.authenticated && history.push('/');
 
@@ -33,7 +36,7 @@ export function Home() {
       </Title>
 
       <main>
-        <Card>
+        <Card onClick={() => history.push('/profile')} green lines>
           Meu Cadastro
           <Text>
             {authContext.user.displayName}
@@ -41,10 +44,10 @@ export function Home() {
             {authContext.user.email}
           </Text>
         </Card>
-        <Card>
+        <Card onClick={() => history.push('/line')} lines>
           Entrar em uma fila
         </Card>
-        <Card>
+        <Card maps>
           Ver hospitais
         </Card>
       </main>

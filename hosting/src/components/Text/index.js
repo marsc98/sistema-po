@@ -5,7 +5,7 @@ export const Text = styled.h1 `
     font-size :  3.8vw;
     font-family:'Roboto';
     font-style: normal;
-    font-weight: ${props => props.white ? '500' : '300'};
+    font-weight: ${props => props.white || props.textBold ? '500' : '300'};
     line-height: 5vw;
     letter-spacing: 0em;
     text-align: center;

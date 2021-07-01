@@ -6,7 +6,7 @@ export const Title = styled.h1 `
     font-family:'Roboto';
     font-style: normal;
     font-weight:  ${props=>props.titleBold ? '700': '300' };
-    line-height: 5vw;
+    line-height: ${props => props.lineHeight ? '8vw' : '5vw'};
     letter-spacing: 0em;
     text-align: center;
     padding-bottom: 3%;

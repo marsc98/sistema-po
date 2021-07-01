@@ -3,12 +3,18 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { AuthProvider } from './context/AuthProvider';
+import { PatientProvider } from './context/PatientProvider';
+import { HospitalProvider } from './context/HospitalProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AuthProvider>
-      <App />
-    </AuthProvider>
+    <PatientProvider>
+      <HospitalProvider>
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+      </HospitalProvider>
+    </PatientProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

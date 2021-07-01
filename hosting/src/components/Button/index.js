@@ -18,7 +18,7 @@ export const Button = styled.button`
     text-align: center;
     text-decoration : none;
     
-    background-color: ${props => props.green ? '#1CCA18' : props.red ? '#CA2318' : '#365A6B'};
+    background-color: ${props => props.green ? '#1CCA18' : props.red ? '#CA2318' : props.yellow ? '#ECD503' : '#365A6B'};
     border-radius: 15px;
 
     cursor: pointer;

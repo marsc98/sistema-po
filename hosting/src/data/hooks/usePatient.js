@@ -3,7 +3,7 @@ import {firestore} from "../firebase";
 export function usePatient() {
   return {
     register: (data, terms, localization) => {
-      firestore.collection("patient").doc(data.email).set(
+      firestore.collection("patient").doc(data?.email).set(
         {
           name: data.name,
           email: data.email,
